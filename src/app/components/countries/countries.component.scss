@@ -1,0 +1,171 @@
+// Se importan las variables definidas en styles/css/_variables.scss
+@import 'variables';
+
+// Funciones para definir los breakpoints en responsive
+@import 'mixins/breakpoint';
+
+#filters {
+
+    .input, .select {
+        width: 80%;
+        background: $white;
+        box-shadow: 0 0 3px darken($dark-gray-bg, 10%);
+        padding: 7px 25px;
+        border-radius: 5px;
+        color: $dark-blue-text;
+        font-size: .875em;
+    }
+
+    input {
+        display: inline-block;
+        width: calc(100% - 40px);
+        margin: auto;
+        margin-left: 10px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .select {
+        padding: 14px 15px 15px;
+        width: 200px;
+        position: relative;
+        cursor: pointer;
+        margin-top: 20px;
+
+        @include mq($medium-and-up) {
+            float: right;
+            margin-top: 0;
+        }
+
+        span {
+            display: block;
+
+            span {
+                display: inline;
+            }
+        }
+
+        .fa-chevron-down,
+        .fa-chevron-up {
+            float: right;
+            margin-top: 2px;
+            width: 12px;
+        }
+
+        .fa-chevron-up {
+            display: none;
+        }
+
+        .isOpen {
+            .fa-chevron-down {
+                display: none;
+            }
+            .fa-chevron-up {
+                display: block;
+            }
+        }
+
+        ul {
+            position: absolute;
+            width: 100%;
+            top: 115%;
+            list-style: none;
+            margin: 0;
+            left: 0;
+            padding: 6px 15px;
+            background: $white;
+            box-shadow: 0 0 3px darken($dark-gray-bg, 10%);
+            border-radius: 5px;
+            color: $dark-blue-text;
+
+            li {
+                padding: 3px 0;
+            }
+        }
+    }
+
+}
+
+#filters.is-dark {
+    .input, .select {
+        background: $dark-blue;
+        box-shadow: 0 0 3px darken($dark-blue-bg, 10%);
+        color: $white;
+    }
+    input {
+        background: $dark-blue;
+        color: $white;
+    }
+    .select ul {
+        background: $dark-blue;
+        box-shadow: 0 0 3px darken($dark-blue-bg, 10%);
+        color: $white;
+    }
+}
+
+#countries {
+    margin-top: 20px;
+
+    .grid-margin-y > .cell {
+        margin-top: 1.875rem;
+        margin-bottom: 1.875rem;
+    }
+
+    .card {
+        max-width: 270px;
+        min-height: 360px;
+        box-shadow: 0 0 3px darken($dark-gray-bg, 10%);
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: auto;
+
+        a {
+            color: inherit;
+        }
+
+        .flag {
+            width: 100%;
+            height: 180px;
+
+            img {
+                object-fit: cover;
+                height: 180px;
+                min-width: 100%;
+            }
+        }
+
+        .info {
+            padding: 28px 20px;
+        }
+
+        h3 {
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+
+        div div {
+            font-size: .875em;
+        }
+
+        label {
+            font-weight: 800;
+            display: inline;
+            font-size: .875em;
+            color: $dark-blue-text;
+        }
+    }
+
+}
+
+#countries.is-dark {
+    .card {
+        background: $dark-blue;
+        box-shadow: 0 0 3px darken($dark-blue-bg, 10%);
+        color: $white;
+
+        label {
+            color: $white;
+        }
+    }
+}

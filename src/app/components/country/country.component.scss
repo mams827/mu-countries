@@ -1,0 +1,81 @@
+// Se importan las variables definidas en styles/css/_variables.scss
+@import 'variables';
+
+#buttons {
+    a {
+        background: $white;
+        box-shadow: 0 0 3px darken($dark-gray-bg, 10%);
+        padding: 12px 35px;
+        border-radius: 5px;
+        color: $dark-gray;
+        font-size: .875em;
+
+        .fa-long-arrow-alt-left {
+            margin-right: .875em;
+        }
+    }
+}
+
+#buttons.is-dark {
+    a {
+        background: $dark-blue;
+        box-shadow: 0 0 3px darken($dark-blue-bg, 10%);
+        color: $white;
+    }
+}
+
+#country {
+    padding-top: 40px;
+
+    .flag {
+        padding-right: 25px;
+    }
+
+    .info {
+        padding-left: 25px;
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        font-weight: 800;
+        margin: 1em auto;
+    }
+
+    label {
+        font-size: 1em;
+        display: inline;
+        font-weight: bold;
+        color: $dark-blue-text;
+    }
+
+    .borders {
+        margin-top: 1em;
+
+        a {
+            background: $white;
+            box-shadow: 0 0 3px darken($dark-gray-bg, 10%);
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: $dark-gray;
+            font-size: .875em;
+            display: inline-block;
+            margin: .3em .5em .3em 0;
+
+            &:first-of-type {
+                margin-left: .5em;
+            }
+        }
+    }
+}
+
+#country.is-dark {
+    label {
+        color: $white;
+    }
+    .borders a {
+        background: $dark-blue;
+        box-shadow: 0 0 3px darken($dark-blue-bg, 10%);
+        color: $white;
+    }
+}

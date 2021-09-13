@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Foundation es una librería para manejar el responsive y otras utilidades
+@import 'https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css';
+
+// Se importan las variables definidas en styles/css/_variables.scss
+@import 'variables';
+
+
+// Se sobreescriben algunos estilos de foundation
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    background: $dark-gray-bg;
+    color: $dark-blue-text;
+}
+
+body.is-dark {
+    background: $dark-blue-bg;
+    color: $white;
+}
+
+

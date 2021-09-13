@@ -1,0 +1,59 @@
+<div id="buttons" class="grid-container" [ngClass]="{'is-dark': global.isDark}">
+  <div class="grid-x grid-margin-x grid-margin-y">
+    <div class="cell small-12">
+      <a routerLink="/">
+        <i class="fas fa-long-arrow-alt-left"></i> Back
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="country" class="grid-container" [ngClass]="{'is-dark': global.isDark}">
+  <div class="grid-x grid-margin-x">
+    <div class="cell medium-6 flag">
+      <img src="{{ country.flag }}" />
+    </div>
+
+    <div class="cell medium-6 info">
+      <h2>{{ country.name }}</h2>
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-6">
+          <div>
+            <label>Native Name:</label> {{ country.nativeName }}
+          </div>
+          <div>
+            <label>Population:</label> {{ country.population | number }}
+          </div>
+          <div>
+            <label>Region:</label> {{ country.region }}
+          </div>
+          <div>
+            <label>Sub Region:</label> {{ country.subregion }}
+          </div>
+          <div>
+            <label>Capital:</label> {{ country.capital }}
+          </div>
+        </div>
+
+        <div class="cell medium-6">
+          <div>
+            <label>Top Level Domain:</label> {{ country.topLevelDomain }}
+          </div>
+          <div>
+            <label>Currencies:</label> {{ country.currencies }}
+          </div>
+          <div>
+            <label>Languages:</label> {{ country.languages }}
+          </div>
+        </div>
+
+        <div class="cell small-12 borders">
+          <div>
+            <label>Border Countries:</label>
+            <a *ngFor="let border of borders" routerLink="/country/{{ border.alpha2Code }}">{{ border.name }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

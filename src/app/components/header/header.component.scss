@@ -1,0 +1,54 @@
+// Se importan las variables definidas en styles/css/_variables.scss
+@import 'variables';
+
+// Funciones para definir los breakpoints en responsive
+@import 'mixins/breakpoint';
+
+header {
+    padding: 20px 0;
+    background: $white;
+    box-shadow: 0 0 4px $dark-gray;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+
+    div, h1 {
+        line-height: 35px;
+    }
+
+    h1 {
+        font-size: 1em;
+        font-weight: 800;
+        margin: 0;
+
+        @include mq($medium-and-up) {
+            font-size: 1.5em;
+        }
+    }
+
+    span {
+        font-weight: 600;
+        color: $dark-gray;
+        cursor: pointer;
+        font-size: .875em;
+
+        @include mq($medium-and-up) {
+            font-size: inherit;
+        }
+    }
+
+}
+
+.top-space {
+    padding-top: 120px;
+}
+
+
+header.is-dark {
+    background: $dark-blue;
+    box-shadow: 0 0 4px $dark-blue-text;
+
+    span {
+        color: $white;
+    }
+}

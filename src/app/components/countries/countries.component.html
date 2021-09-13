@@ -1,0 +1,50 @@
+<div id="filters" class="grid-container" [ngClass]="{'is-dark': global.isDark}">
+  <div class="grid-x grid-margin-x grid-margin-y">
+    <div class="cell small-12 medium-6">
+      <div class="input">
+        <i class="fas fa-search"></i>
+        <input #searchInput type="text" placeholder="Search for a country..." (input)="search(searchInput.value)" />
+      </div>
+    </div>
+    <div class="cell small-12 medium-6">
+      <div class="select">
+        <span #selectButton (click)="toggleOptions()" [ngClass]="{'isOpen': optionsAreVisible}">
+          <span #textSelect>Filter by region</span>
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-up"></i>
+        </span>
+        <ul #options [hidden]="!optionsAreVisible">
+          <li *ngFor="let region of regionFilter" (click)="filterByRegion(region)">{{ region }}</li>
+          <li  (click)="filterByRegion('')" [hidden]="!regionIsSelected">All Countries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="countries" class="grid-container" [ngClass]="{'is-dark': global.isDark}">
+  <div class="grid-x grid-margin-x grid-margin-y">
+    <div *ngFor="let country of countries" class="cell small-12 medium-6 large-3">
+      <div class="card">
+        <a routerLink="/country/{{ country.alpha2Code }}">
+          <div class="flag">
+            <img src="{{ country.flag }}" />
+          </div>
+          <div class="info">
+            <h3>{{ country.name }}</h3>
+            <div>
+              <label>Population:</label> {{ country.population | number }}
+            </div>
+            <div>
+              <label>Region:</label> {{ country.region }}
+            </div>
+            <div>
+              <label>Capital:</label> {{ country.capital }}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
